@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />	
+	<title>Simple Invoice</title>	
+	<style>
+	#page-wrap { width: 800px; margin: 0 auto; }	
+	table { border-collapse: collapse; }
+	table td, table th { border: 1px solid black; padding: 5px; }
+	#header {width: 100%; margin: 20px 0; background: #c2c2c2; text-align: center; color: black; font: bold 15px Helvetica; text-decoration: uppercase; padding: 8px 0px; }
+	#address { width: 250px; height: 150px; float: right; }
+	#customer { overflow: hidden; }
+	#logo {text-align: left;
+    float: left;
+    position: relative;    
+    border: 1px solid #fff;    
+    max-height: 100px;
+    overflow: hidden;
+    background: #c2c2c2;
+    padding: 25px 73px;}
+	#customer-title { font-size: 20px; font-weight: bold; float: left; }
+	#table { margin-top: 1px; width: 300px; float: right; }
+	#table td { text-align: right;  }
+	#table td.table-head { text-align: left; background: #eee; }
+	#table td textarea { width: 100%; height: 20px; text-align: right; }
+	#products { clear: both; width: 100%; margin: 30px 0 0 0; border: 1px solid black; }
+	#products th { background: #eee; }
+	#products textarea { width: 80px; height: 50px; }
+	#products tr.product-row td {vertical-align: top; }
+	#products td.description { width: 450px; }
+	#products td.product-name { width: 35px; }
+	#products td.description textarea, #products td.product-name textarea { width: 100%; }
+	#products td.total-line {text-align: right; }
+	#products td.total-value { border-left: 0; padding: 10px; }
+	#products td.total-value textarea { height: 20px; background: none; }
+	#products td.balance { background: #eee; }
+	#products td.blank { border: 0; }
+	#terms { text-align: center; margin: 25px 0; }
+	#terms h5 { text-transform: uppercase; font: 13px Helvetica, Sans-Serif; letter-spacing: 10px; border-bottom: 1px solid black; padding: 0 0 8px 0; margin: 0 0 8px 0;font-weight:700; }
+	.squareBox{width:45%;}
+	.left{float:left;}
+	.right{float:right;text-align:right;}
+	.textLeft{text-align:left;}
+	.spaceBetweenDiv{padding:15px 0;}
+	#hiderow,
+	.delete {
+	  display: none;
+	}
+	</style>
+</head>
+<body>
+	<div id='page-wrap'>
+		<div id='header'><strong>INVOICE</strong></div>		
+		<div id='identity'>		
+            <div class='squareBox right spaceBetweenDiv'>
+            	<strong>Customer Address:</strong>
+            	<p>Kolkata<br>
+				42, Panchannogram<br>
+				Kolkata, 700100<br>
+				Phone: (125) 111-152325</p>
+			</div>
+            <div id='logo'>
+              <img id='image' src='images/logo.png' alt='logo' />
+            </div>
+		
+		</div>
+		
+		<div style='clear:both'></div>
+		
+		<div id='customer'>
+			<div class='squareBox left'>
+	            <div class='spaceBetweenDiv'>
+	            	<strong>SOLD BY: </strong><br>
+	            	<strong>M.r Shahnawaz Shamsi</strong><br>
+	            	<p>42, Panchannogram</p>
+					<p>Kolkata. 700100</p>
+					<strong>PAN No:</strong> xxxxxxxxx<br>
+					<strong>GST Reg. No.:</strong> xxxxxxxxx
+	            </div>
+	            <div class='spaceBetweenDiv'>
+	            	<strong>Order Number:</strong>xxxxxx<br>
+	            	<strong>Transaction No:</strong>Kolkata<br>
+					<strong>Order Date:</strong> xxxxxxxxx<br>
+					<strong>Order Time:</strong> xxxxxxxxx<br>
+					<strong>Mode Of Payment:</strong> xxxxxxxxx<br>
+					<strong>Coupon Code :</strong> xxxxxxxxx<br>
+					<strong>Preferred Delivery Time:</strong> xxxxxxxxx<br>
+	            </div>
+			</div>
+
+            <table id='table'>
+                <tr>
+                    <td class='table-head'>Invoice #</td>
+                    <td><div>000123</div></td>
+                </tr>
+                <tr>
+
+                    <td class='table-head'>Date</td>
+                    <td><div id='date'>July 5, 2019</div></td>
+                </tr>
+                <tr>
+                    <td class='table-head'>Amount Due</td>
+                    <td><div class='due'>$108.00</div></td>
+                </tr>
+
+            </table>
+		
+		</div>
+
+		
+		<table id='products'>
+		
+		  <tr>
+		      <th>Sr.N</th>
+		      <th>Product Details</th>
+		      <th>Unit Cost</th>
+		      <th>Quantity</th>
+		      <th>Price</th>
+		  </tr>
+		  
+		  <tr class='product-row'>
+		      <td class='product-name'><div class='delete-wpr'>1</div></td>
+		      <td class='description'><div>Product one</div></td>
+		      <td><div class='cost'>$25.00</div></td>
+		      <td><div class='qty'>1</div></td>
+		      <td><span class='price'>$25.00</span></td>
+		  </tr>
+		  
+		  <tr class='product-row'>
+		      <td class='product-name'><div class='delete-wpr'>2</div></td>
+
+		      <td class='description'><div>Product two</div></td>
+		      <td><div class='cost'>$75.00</div></td>
+		      <td><div class='qty'>1</div></td>
+		      <td><span class='price'>$75.00</span></td>
+		  </tr>
+		  
+		  <tr id='hiderow'>
+		    <td colspan='5'><a id='addrow' href='javascript:;' title='Add a row'>Add a row</a></td>
+		  </tr>
+		  
+		  <tr>
+		      <td colspan='2' class='blank'> </td>
+		      <td colspan='2' class='total-line'>Subtotal</td>
+		      <td class='total-value'><div id='subtotal'>$100.00</div></td>
+		  </tr>
+		  <tr>
+
+		      <td colspan='2' class='blank'> </td>
+		      <td colspan='2' class='total-line'>Total</td>
+		      <td class='total-value'><div id='total'>$100.00</div></td>
+		  </tr>
+		  <tr>
+		      <td colspan='2' class='blank'> </td>
+		      <td colspan='2' class='total-line'>Tax</td>
+
+		      <td class='total-value'><div id='paid'>$8.00</div></td>
+		  </tr>
+		  <tr>
+		      <td colspan='2' class='blank'> </td>
+		      <td colspan='2' class='total-line balance'>Grand Total</td>
+		      <td class='total-value balance'><div class='due'>$108.00</div></td>
+		  </tr>
+		
+		</table>
+		<div class='squareBox left'>
+            <div class='spaceBetweenDiv'>
+            	<strong>For Shahnawaz Shamsi: </strong><br>
+            	<br>
+            	<br>
+            	<br>
+            	<br>
+				<strong>Authorized Signatory</strong>
+            </div>
+        </div>
+        <div class='squareBox right textLeft'>
+            <div class='spaceBetweenDiv'>
+            	<strong>Customer Receipt:</strong><br>
+            	<strong>Customer Name:</strong><br>
+				<strong>Customer Signature:</strong> xxxxxxxxx<br>
+				<strong>Date:</strong> xxxxxxxxx<br>
+				<strong>Mobile No:</strong> xxxxxxxxx<br>
+				<strong>ID Proof:</strong> xxxxxxxxx
+            </div>
+        </div>
+        <br>
+        <br>
+            	<br>
+            	<br>
+		<div id='terms'>
+		  <h5>Terms</h5>
+		  <div>Fund will not be refunded after 15 days of purchasing.</div>
+		</div>
+	
+	</div>
+	
+</body>
+
+</html>
