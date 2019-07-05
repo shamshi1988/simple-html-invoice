@@ -9,7 +9,7 @@ Inside the index.html we had used the same HTML and CSS in same page.
 
 
 ### Screen shot of the Invoice
-![Preview](http://www.phpgeeks.in/invoice.png)
+![Preview](http://www.phpgeeks.in/demo/simple-html-invoice/images/invoice.png)
 
 ### Suggestions?
 Suggestions are welcome. Please suggest us if you want any changes or need something else?
